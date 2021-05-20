@@ -1,0 +1,27 @@
+name: GCoins
+author: GueniPlayz
+version: 1.0
+api-version: 1.13
+description: a coinsystem depending on my coinapi
+website: http://gueniplayz.me
+main: de.gueni.gcoins.GCoinsPlugin
+
+depend:
+  - CoinAPI
+
+commands:
+  addcoins:
+    aliases: [ addcoin, addmoney ]
+    description: "add coins to a users account"
+  removecoins:
+    aliases: [ removecoin, removemoney ]
+    description: "removes coins to a users account"
+  setcoins:
+    aliases: [ setcoin, setmoney ]
+    description: "sets the coins of a users account"
+  coins:
+    aliases: [ othercoins, coin, getcoins, getmoney, money ]
+    description: "see your or other players coins"
+  pay:
+    aliases: [ givemoney, givecoins ]
+    description: "pays coins to a users account"

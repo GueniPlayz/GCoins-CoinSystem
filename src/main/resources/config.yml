@@ -1,0 +1,38 @@
+# GCoinSystem by GueniPlayz
+
+options:
+  chat:
+    prefix: "&8| &6GCoins &8» &7"
+    not_permitted: "%prefix% &cYou are not permitted to execute this command!"
+    player_not_online: "%prefix% &cPlayer %s is not online!"
+    wrong_args: "%prefix% &cWrong arguments: Use "
+    numeric_input: "%prefix% &cInput %s must be numeric!"
+
+commands:
+  pay:
+    permission: ""
+    target_is_sender: "%prefix% &cYou need to choose a different player than yourself!"
+    target_message: "%prefix% &a%s sent you %f coins"
+    sender_not_enough_coins: "%prefix% &cYou do not have enough coins to complete this transaction!"
+    sender_message: "%prefix% &aYou've sent %f coins to %s"
+
+  set_coins:
+    permission: "system.command.setcoins"
+    target_message: "%prefix% &aYour coins were set to %f"
+    sender_message: "%prefix% &a%s coins were set to %f"
+
+  add_coins:
+    permission: "system.command.addcoins"
+    target_message: "%prefix% &aYou have gained %f coins"
+    sender_message: "%prefix% &a%s gained %f coins"
+
+  remove_coins:
+    permission: "system.command.removecoins"
+    target_message: "%prefix% &aYou have lost %f coins"
+    sender_message: "%prefix% &a%s lost %f coins"
+
+  coins:
+    permission: "system.command.coins"
+    permission_other: "system.command.coins.other"
+    sender_other_player_message: "%prefix% &6Player %s has %f coins"
+    sender_message: "%prefix% &6You have %s coins"
