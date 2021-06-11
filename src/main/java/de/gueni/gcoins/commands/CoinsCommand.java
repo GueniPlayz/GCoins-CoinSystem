@@ -1,20 +1,19 @@
 package de.gueni.gcoins.commands;
 
 import de.gueni.coins.user.CoinUser;
-import de.gueni.gcoins.GCoinsPlugin;
+import de.gueni.gcoins.GCoinPlugin;
 import de.gueni.gcoins.commands.simple.SimpleCommand;
 import de.gueni.gcoins.handler.ConfigHandler;
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 public class CoinsCommand extends SimpleCommand {
 
-    private final GCoinsPlugin plugin;
+    private final GCoinPlugin plugin;
     private final ConfigHandler configHandler;
 
-    public CoinsCommand( String permission, String noPermissionMessage, GCoinsPlugin plugin ) {
+    public CoinsCommand( String permission, String noPermissionMessage, GCoinPlugin plugin ) {
         super( permission, noPermissionMessage );
         this.plugin = plugin;
         this.configHandler = plugin.getConfigHandler();
@@ -26,12 +25,13 @@ public class CoinsCommand extends SimpleCommand {
         if ( !( args.length >= 1 ) ) {
 
             if ( !( commandSender instanceof Player ) ) {
-                commandSender.sendMessage( configHandler.getPrefix() + ChatColor.DARK_RED + "Sender must be a player!" );
+                commandSender.sendMessage( configHandler.getWrongArgs() + "/coins <Player>" );
                 return;
             }
 
-            CoinUser user = CoinUser.getUser( ( (Player) commandSender ).getPlayer() );
-            commandSender.sendMessage( configHandler.getMessage( String.format( "commands.coins.sender_message", user.getCoins() ) ) );
+            Player player = (Player) commandSender;
+            CoinUser user = CoinUser.getUser( player );
+            commandSender.sendMessage( String.format( configHandler.getMessage( "commands.coins.sender_message" ), user.getCoins() ) );
 
         } else {
 

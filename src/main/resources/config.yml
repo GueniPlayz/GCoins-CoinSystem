@@ -2,13 +2,14 @@
 
 options:
   chat:
-    prefix: "&8| &6GCoins &8» &7"
+    prefix: "&8| &6GCoins &8»"
     not_permitted: "%prefix% &cYou are not permitted to execute this command!"
     player_not_online: "%prefix% &cPlayer %s is not online!"
     wrong_args: "%prefix% &cWrong arguments: Use "
     numeric_input: "%prefix% &cInput %s must be numeric!"
 
 commands:
+
   pay:
     permission: ""
     target_is_sender: "%prefix% &cYou need to choose a different player than yourself!"
@@ -35,4 +36,4 @@ commands:
     permission: "system.command.coins"
     permission_other: "system.command.coins.other"
     sender_other_player_message: "%prefix% &6Player %s has %f coins"
-    sender_message: "%prefix% &6You have %s coins"
+    sender_message: "%prefix% &6You have %f coins"

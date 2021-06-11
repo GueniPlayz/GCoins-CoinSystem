@@ -1,6 +1,6 @@
 package de.gueni.gcoins.handler;
 
-import de.gueni.gcoins.GCoinsPlugin;
+import de.gueni.gcoins.GCoinPlugin;
 import lombok.Getter;
 import org.bukkit.ChatColor;
 
@@ -9,7 +9,7 @@ import java.util.Objects;
 @Getter
 public class ConfigHandler {
 
-    private final GCoinsPlugin plugin;
+    private final GCoinPlugin plugin;
 
     private String prefix;
     private String notPermitted;
@@ -17,7 +17,7 @@ public class ConfigHandler {
     private String wrongArgs;
     private String numericInput;
 
-    public ConfigHandler( GCoinsPlugin plugin ) {
+    public ConfigHandler( GCoinPlugin plugin ) {
         this.plugin = plugin;
 
         this.prefix = ChatColor.translateAlternateColorCodes( '&', Objects.requireNonNull( plugin.getConfig().getString( "options.chat.prefix" ) ) );
@@ -27,7 +27,6 @@ public class ConfigHandler {
         this.numericInput = getMessage( "options.chat.numeric_input" );
 
     }
-
 
     public String getMessage( String path ) {
         if ( plugin.getConfig().getString( path ) == null )

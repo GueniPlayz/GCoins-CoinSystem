@@ -1,7 +1,7 @@
 package de.gueni.gcoins.commands;
 
 import de.gueni.coins.user.CoinUser;
-import de.gueni.gcoins.GCoinsPlugin;
+import de.gueni.gcoins.GCoinPlugin;
 import de.gueni.gcoins.commands.simple.SimpleCommand;
 import de.gueni.gcoins.handler.ConfigHandler;
 import org.bukkit.Bukkit;
@@ -10,10 +10,10 @@ import org.bukkit.entity.Player;
 
 public class RemoveCoinsCommand extends SimpleCommand {
 
-    private final GCoinsPlugin plugin;
+    private final GCoinPlugin plugin;
     private final ConfigHandler configHandler;
 
-    public RemoveCoinsCommand( String permission, String noPermissionMessage, GCoinsPlugin plugin ) {
+    public RemoveCoinsCommand( String permission, String noPermissionMessage, GCoinPlugin plugin ) {
         super( permission, noPermissionMessage );
         this.plugin = plugin;
         this.configHandler = plugin.getConfigHandler();
